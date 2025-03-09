@@ -40,5 +40,7 @@ def animate_loss_turbulence(loss_history, turbulence_history, interval=500):
         init_func=init, interval=interval, blit=True
     )
     plt.tight_layout()
-    plt.show()
+    ani.save("loss_turbulence_animation.mp4", writer="ffmpeg")
+    plt.close()
+    print("Animation saved to loss_turbulence_animation.mp4")
     return ani

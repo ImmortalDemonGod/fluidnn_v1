@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def plot_loss_curve(loss_history):
+def plot_loss_curve(loss_history, filename='loss_curve.png'):
     """
     Plots a simple loss curve over training steps.
     """
@@ -12,7 +12,9 @@ def plot_loss_curve(loss_history):
     plt.ylabel('Loss')
     plt.legend()
     plt.tight_layout()
-    plt.show()
+    plt.savefig(filename)
+    plt.close()
+    print(f"Loss curve saved to {filename}")
 
 def plot_gradient_vector_field(grad_dict, title_suffix=""):
     """
@@ -40,4 +42,6 @@ def plot_gradient_vector_field(grad_dict, title_suffix=""):
     ax.set_aspect('equal')
     ax.set_title(f"Gradient Vector Field {title_suffix}")
     ax.invert_yaxis()
-    plt.show()
+    plt.savefig('gradient_field.png')
+    plt.close()
+    print("Gradient field saved to gradient_field.png")

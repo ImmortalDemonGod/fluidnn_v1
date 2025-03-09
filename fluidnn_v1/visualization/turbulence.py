@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-def plot_turbulence(turbulence_history):
+def plot_turbulence(turbulence_history, filename='turbulence.png'):
     """
     Visualizes turbulence (average gradient angle) over training steps.
     """
@@ -17,7 +17,9 @@ def plot_turbulence(turbulence_history):
     plt.ylabel('Average Gradient Angle')
     plt.legend()
     plt.tight_layout()
-    plt.show()
+    plt.savefig(filename)
+    plt.close()
+    print(f"Turbulence plot saved to {filename}")
 
 def diagnose_turbulence(turbulence_history):
     """

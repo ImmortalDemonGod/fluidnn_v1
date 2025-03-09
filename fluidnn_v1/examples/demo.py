@@ -4,6 +4,8 @@ import numpy as np
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+import matplotlib
+matplotlib.use('Agg')  # Non-interactive backend suitable for headless environments
 
 from fluidnn_v1.core.model import SimpleFluidModel
 from fluidnn_v1.core.trainer import FluidTrainer
