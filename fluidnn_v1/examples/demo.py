@@ -1,6 +1,9 @@
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 import numpy as np
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from fluidnn_v1.core.model import SimpleFluidModel
 from fluidnn_v1.core.trainer import FluidTrainer
