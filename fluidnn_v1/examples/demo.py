@@ -39,18 +39,22 @@ def main():
 
     # 5. Visualize Loss
     plot_loss_curve(logger.loss_history)
+    input("Press Enter to continue after the loss curve...")
 
     # 6. Visualize a sample gradient vector field (just the last step)
     if logger.gradient_history:
         last_grads = logger.gradient_history[-1]
         plot_gradient_vector_field(last_grads, title_suffix="(Last Step)")
+        input("Press Enter to continue after the gradient field...")
 
     # 7. Visualize Turbulence
     plot_turbulence(logger.turbulence_history)
     print("[Turbulence Diagnosis]", diagnose_turbulence(logger.turbulence_history))
+    input("Press Enter to continue after the turbulence plot...")
 
     # 8. Optional: Animate the training over steps
     _ = animate_loss_turbulence(logger.loss_history, logger.turbulence_history, interval=400)
+    input("Press Enter to exit the demo...")
 
 if __name__ == "__main__":
     main()
